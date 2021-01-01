@@ -1,0 +1,65 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+    properties:
+      hibernate:
+        show_sql: true 
+    database: postgresql
+               
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      FAIL_ON_EMPTY_BEANS: false
+    deserialization:
+      unwrap-root-value: false
+
+  profiles:
+    active:
+    - dev
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 8
+  cache:
+    type: redis
+    redis:
+      time-to-live: 30
+      cache-null-values: false
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: ekoloji
+server:
+  port: 8080
+
+---
+
+clear:
+  all:
+    cache:
+      fixed:
+        rate: 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"
+                  
+  endpoint:
+    shutdown:
+      enabled: true
