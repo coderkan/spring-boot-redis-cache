@@ -172,7 +172,7 @@ Docker compose file:
 
 docker-compose.yml
 
-```
+```yml
 version: '3'
 
 services:
@@ -206,19 +206,21 @@ services:
       - cache
 ```
 
-
-
 ## Build & Run Application
 
 * Build Java Jar.
-	
-	$ mvn clean install
+
+```shell
+ $ mvn clean install
+```
 
 *  Docker Compose Build and Run
 
-	$ docker-compose build --no-cache
-	$ docker-compose up --force-recreate
+```shell
+$ docker-compose build --no-cache
+$ docker-compose up --force-recreate
 
+```
 
 After running the application you can visit `http://localhost:8080`.	
 
