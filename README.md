@@ -1,19 +1,37 @@
 # Spring Boot Redis Cache
 
 
+Context:
+
+  - [**Getting Started**](#getting-started)
+  - [**Maven Dependencies**](#maven-dependencies)
+  - [**Redis Configuration**](#redis-configuration)
+  - [**Spring Service**](#spring-service)
+  - [**Docker & Docker Compose**](#docker-docker-compose)
+  - [**Build & Run Application**](#build-run-application)
+  - [**Endpoints with Swagger**](#endpoints-with-swagger)
+  - [**Demo**](#demo)
+
+
+## Getting Started
+
+In this project, I used Redis for caching with Spring Boot.
+When you send any request to get all customers or customer by id, you will wait 3 seconds if Redis has no related data.
+
+
 ## Maven Dependencies
 
 
 ```mvn
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>redis.clients</groupId>
+	<artifactId>jedis</artifactId>
+</dependency>
 		
 ```
 
@@ -209,3 +227,9 @@ After running the application you can visit `http://localhost:8080`.
 
 You can see the endpoint in `http://localhost:8080/swagger-ui.html` page.
 I used Swagger for visualization endpoints.
+
+
+![Endpoints](assets/endpoints.png)
+
+
+## Demo
