@@ -44,7 +44,7 @@ public class CustomerController {
 	@PutMapping(value = "/customers")
 	public ResponseEntity<Object> updateCustomer(@RequestBody Customer customer) {
 		Customer updated = this.customerService.update(customer);
-		return ResponseEntity.status(HttpStatus.CREATED).body(updated);
+		return ResponseEntity.ok(updated);
 	}
 
 	@DeleteMapping(value = "/customers/{id}")
