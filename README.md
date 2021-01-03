@@ -22,7 +22,7 @@ When you send any request to get all customers or customer by id, you will wait 
 ## Maven Dependencies
 
 
-```mvn
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-data-redis</artifactId>
